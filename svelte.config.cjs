@@ -1,4 +1,5 @@
 const preprocess = require('svelte-preprocess');
+const WindiCSS = require('vite-plugin-windicss').default;
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
@@ -8,6 +9,10 @@ module.exports = {
 
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
+
+		vite: {
+			plugins: [WindiCSS()]
+		}
 	}
 };

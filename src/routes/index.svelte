@@ -1,2 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	let showButton = false;
+</script>
+
+{showButton}
+<h1 class={showButton ? 'bg-red-800' : 'bg-yellow-800'}>Welcome to SvelteKit</h1>
+<button on:click={() => (showButton = !showButton)}>toggle</button>
